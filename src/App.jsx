@@ -11,25 +11,30 @@ import Portfolio from "./components/Portfolio";
 import SearchBar from "./components/SearchBar";
 import Services from "./components/Services";
 import equipmentData from "./data/equipmentData"; // Import the equipment data
+import Equipment from "./components/EquipmentDisplay";
+import WhatsAppIcon from "./components/watsappComponent";
 
 function App() {
   return (
     <>
       {/* Search Bar */}
-      <SearchBar products={equipmentData} /> {/* Pass the equipment data as a prop */}
+      <SearchBar products={equipmentData} /> 
 
       {/* Main Content */}
       <div className="bg-[#181818] mt-[80px]"> {/* Ensure Navbar is below SearchBar */}
         <Navbar />
         <Hero />
-        <About />
-        <Services />
+        <Equipment />
+
+        {/* <About /> */}
+        {/* <Services /> */}
         <Portfolio />
         <Blogs />
         <Partners />
         <Contact />
-        <div className="h-20"></div>
         <Footer />
+        <WhatsAppIcon />
+
       </div>
     </>
   );

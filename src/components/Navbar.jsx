@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { FaXmark, FaBarsStaggered } from "react-icons/fa6";
 
-const Navbar = ({ isSearchActive }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
@@ -32,17 +32,11 @@ const Navbar = ({ isSearchActive }) => {
   ];
 
   return (
-    <header
-      className={`fixed w-full top-0 left-0 z-40 transition-all duration-300 ${
-        isSearchActive ? "mt-24" : "mt-0"
-      }`} // Apply dynamic margin based on isSearchActive state
-    >
+    <header className="fixed w-full z-10000002 transition-all duration-300">
       <nav
-        className={`py-4 lg:px-24 px-4 ${
-          isSticky ? "bg-dark shadow-lg transition-all duration-300" : "bg-transparent"
-        }`}
+        className={`py-4 lg:px-24 px-4 ${isSticky ? "bg-dark shadow-lg" : "bg-transparent"}`}
       >
-        <div className="flex justify-between items-center text-base">
+        <div className="flex z-10000002 justify-between items-center text-base relative">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img
@@ -88,7 +82,7 @@ const Navbar = ({ isSearchActive }) => {
         <div
           className={`md:hidden fixed top-0 left-0 w-full h-screen bg-dark transition-transform transform ${
             isMenuOpen ? "translate-y-0" : "-translate-y-full"
-          } z-40 px-4`}
+          } px-4`}
         >
           <div className="flex justify-between items-center p-4 border-b border-gray-600">
             {/* Logo */}
@@ -115,11 +109,11 @@ const Navbar = ({ isSearchActive }) => {
               <Link
                 to={path}
                 key={link}
-                activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={-100}
-                className="text-3xl text-white font-semibold uppercase hover:text-orange cursor-pointer"
+                offset={-90}
+                onClick={toggleMenu}
+                className="text-white text-lg hover:text-orange cursor-pointer"
               >
                 {link}
               </Link>
