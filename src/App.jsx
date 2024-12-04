@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import About from "./components/About";
+import AboutUs from "./components/About";
 import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -26,14 +26,15 @@ function App() {
         <Hero />
         <Equipment />
 
-        {/* <About /> */}
+        <AboutUs />
         {/* <Services /> */}
-        <Portfolio />
-        <Blogs />
+        {/* <Portfolio /> */}
+        {/* <Blogs /> */}
         <Partners />
         <Contact />
-        <Footer />
         <WhatsAppIcon />
+
+        <Footer />
 
       </div>
     </>
