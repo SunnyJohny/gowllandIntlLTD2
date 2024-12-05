@@ -30,7 +30,7 @@ function App() {
         {/* <Services /> */}
         {/* <Portfolio /> */}
         {/* <Blogs /> */}
-        <Partners />
+        {/* <Partners /> */}
         <Contact />
         <WhatsAppIcon />
 

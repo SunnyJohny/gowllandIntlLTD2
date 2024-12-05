@@ -31,7 +31,7 @@ const Equipment = () => {
   };
 
   return (
-    <div className="p-4 bg-gray-100 min-h-screen">
+    <div id="Equipment" className="p-4 bg-gray-100 min-h-screen">
       {/* Page Title */}
       <h1 className="text-3xl font-bold text-center text-gray-700 mb-6">
         Equipment Gallery

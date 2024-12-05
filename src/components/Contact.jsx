@@ -28,9 +28,13 @@ const Contact = () => {
   return (
     <section id="contact" className="py-8 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-          Contact Us
-        </h2>
+        <div className="mb-8">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-6">Contact Us</h2>
+          <p className="text-sm text-gray-500 mb-2">
+  Home &gt; <span className="text-gray-800 font-bold text-indigo-500">Contact Us</span>
+</p>
+
+        </div>
 
         <div className="flex flex-wrap lg:flex-nowrap gap-6">
           {/* Form Section */}

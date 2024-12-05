@@ -417,3 +417,24 @@ nav {
 .animate-drop {
   animation: slideInFromBottom 1s ease-out forwards;
 } */
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+  white-space: nowrap;
+  animation: typewriter 5s steps(40) 1s forwards;
+}
+
+.translate-y-full {
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-out;
+}

@@ -22,11 +22,35 @@ const Navbar = () => {
     };
   }, []);
 
+  // Adjust scroll position for sticky header
+  const handleScrollAdjust = (e, path) => {
+    e.preventDefault(); // Prevent default behavior
+    const target = document.getElementById(path);
+
+    if (target) {
+      const offset = 100; // Adjust this to match your sticky header height
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = target.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
+      // Close menu on mobile
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    }
+  };
+
   const navItems = [
     { link: "Home", path: "home" },
     { link: "About", path: "about" },
     { link: "Services", path: "services" },
-    { link: "Equipments", path: "portfolio" },
+    { link: "Equipment", path: "Equipment" },
     { link: "Blog", path: "blogs" },
     { link: "Contact", path: "contact" },
   ];
@@ -49,17 +73,14 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-8">
             {navItems.map(({ link, path }) => (
-              <Link
-                to={path}
+              <a
                 key={link}
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-100}
+                href={`#${path}`}
+                onClick={(e) => handleScrollAdjust(e, path)}
                 className="text-base uppercase text-white hover:text-orange cursor-pointer"
               >
                 {link}
-              </Link>
+              </a>
             ))}
           </ul>
 
@@ -106,17 +127,14 @@ const Navbar = () => {
           {/* Navigation Links */}
           <ul className="flex flex-col items-center justify-center mt-12 space-y-6">
             {navItems.map(({ link, path }) => (
-              <Link
-                to={path}
+              <a
                 key={link}
-                spy={true}
-                smooth={true}
-                offset={-90}
-                onClick={toggleMenu}
+                href={`#${path}`}
+                onClick={(e) => handleScrollAdjust(e, path)}
                 className="text-white text-lg hover:text-orange cursor-pointer"
               >
                 {link}
-              </Link>
+              </a>
             ))}
           </ul>
         </div>

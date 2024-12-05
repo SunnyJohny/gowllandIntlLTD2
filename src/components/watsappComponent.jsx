@@ -1,9 +1,9 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa"; // Import WhatsApp icon
 
-const WhatsAppIcon = ({ messageCount = 3 }) => {
+const WhatsAppIcon = ({ messageCount = 1 }) => {
   return (
-    <div className="fixed bottom-4 left-4 z-50">
+    <div className="fixed bottom-4 right-4 z-50">
       <div className="relative">
         <a
           href="https://wa.me/08034100655" // Replace with your WhatsApp number
