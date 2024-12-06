@@ -8,7 +8,7 @@ import service4 from "../assets/service_4.jpeg";
 
 const Services = () => {
   return (
-    <div className="text-white lg:px-24 px-4">
+    <div  className="text-white lg:px-24 px-4">
       <div className="h-36"></div>
 
       {/* Services Section */}

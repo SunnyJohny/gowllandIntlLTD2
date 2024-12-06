@@ -6,6 +6,7 @@ const Equipment = () => {
   const [query, setQuery] = useState("");
   const [filteredEquipment, setFilteredEquipment] = useState(equipmentData);
   const [visibleCount, setVisibleCount] = useState(6); // Number of items to show initially
+  const [selectedEquipment, setSelectedEquipment] = useState(null); // To store the clicked equipment
 
   // Handle search query
   const handleSearch = (e) => {
@@ -28,6 +29,16 @@ const Equipment = () => {
   // Handle "Load More" button
   const handleLoadMore = () => {
     setVisibleCount((prevCount) => prevCount + 6);
+  };
+
+  // Open modal to view clicked equipment
+  const handleImageClick = (equipment) => {
+    setSelectedEquipment(equipment);
+  };
+
+  // Close the modal
+  const closeModal = () => {
+    setSelectedEquipment(null);
   };
 
   return (
@@ -61,14 +72,17 @@ const Equipment = () => {
           filteredEquipment.slice(0, visibleCount).map((equipment) => (
             <div
               key={equipment.id}
-              className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+              className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 cursor-pointer"
+              onClick={() => handleImageClick(equipment)}
             >
               <img
                 src={equipment.image}
                 alt={equipment.name}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-xl font-semibold text-gray-700 truncate">{equipment.name}</h3>
+              <h3 className="text-xl font-semibold text-gray-700 truncate">
+                {equipment.name}
+              </h3>
             </div>
           ))
         )}
@@ -83,6 +97,35 @@ const Equipment = () => {
           >
             Load More
           </button>
+        </div>
+      )}
+
+      {/* Modal */}
+      {selectedEquipment && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-2xl w-full">
+            <div className="relative">
+              <button
+                className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center"
+                onClick={closeModal}
+              >
+                &times;
+              </button>
+              <img
+                src={selectedEquipment.image}
+                alt={selectedEquipment.name}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="p-4">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                {selectedEquipment.name}
+              </h2>
+              <p className="text-gray-600">
+                Detailed information about the selected equipment can go here.
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>
