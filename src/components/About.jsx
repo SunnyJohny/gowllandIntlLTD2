@@ -30,7 +30,7 @@ const AboutUs = () => {
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               <strong className="text-blue-500">Gowlland Ideal Concept Ltd</strong> – Your Trusted Medical Equipment Supplier
               <br />
-              Located in <strong>Jos Plateau State, Nigeria</strong>, <strong>Gowlland Ideal Concept</strong>, a subsidiary
+              Located in <strong>Jos Plateau State, Nigeria</strong>, a subsidiary
               of <strong className="text-blue-500">Gowlland Int'L Company</strong>, is a premier supplier of medical equipment and consumables.
               We are committed to providing high-quality medical supplies to healthcare professionals, hospitals, clinics, caregivers, and patients.
             </p>
