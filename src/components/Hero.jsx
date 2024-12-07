@@ -79,15 +79,18 @@ const Hero = () => {
       <div className="px-4 lg:px-24 mt-8">
         <h1 className="md:w-2/3 lg:text-8xl sm:text-6xl text-5xl mb-5 text-white font-bold lg:leading-snug sm:leading-snug leading-snug"></h1>
         <div className="text-white text-lg flex flex-col-reverse md:flex-row md:items-center items-start justify-between gap-8">
-          <div>
-            <a
-              className="inline-flex items-center gap-2 font-semibold hover:text-orange transition-all duration-300"
-              href="/contact"
-            >
-              <span>Get a Quote</span>
-              <BsArrowRight />
-            </a>
-          </div>
+            <div>
+      <Link
+        to="contact" // The id of the section to scroll to
+        smooth={true} // Smooth scrolling effect
+        offset={-100} // Offset to account for any fixed header
+        duration={500} // Duration of the scrolling animation in ms
+        className="inline-flex items-center gap-2 font-semibold hover:text-orange transition-all duration-300 cursor-pointer"
+      >
+        <span>Get a Quote</span>
+        <BsArrowRight />
+      </Link>
+    </div>
           <div className="md:w-1/2">
             <p className="cs-hero_subtitle">
               Redefining healthcare standards with world-class equipment and

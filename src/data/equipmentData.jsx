@@ -60,6 +60,10 @@ const equipmentData = [
   { id: 57, name: "Scanning Machine", image: "/images/_DSC0162.JPG" },
   { id: 58, name: "Kidney Dish & Gallipot", image: "/images/Kidney Dish & Galli Pot.JPG" },
   { id: 59, name: "Operating Table", image: "/images/Operating Table.JPG" },
+  { id: 59, name: "Infrared Lamp", image: "/images/Infrared Lamp.JPG" },
+  { id: 59, name: "Laryngoscope", image: "/images/Laryngoscope.JPG" },
+  { id: 59, name: "OTOSCOPE", image: "/images/OTOSCOPE.JPG" },
+  { id: 59, name: "PULSE OXIMETER", image: "/images/PULSE OXIMETER.JPG" },
 ];
 
 export default equipmentData;
