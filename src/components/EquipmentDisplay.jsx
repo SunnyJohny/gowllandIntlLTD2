@@ -127,7 +127,7 @@ const Equipment = () => {
             {selectedEquipment.name}
           </h2>
           <p className="text-gray-600">
-            Detailed information about the selected equipment can go here.
+            {/* Detailed information about the selected equipment can go here. */}
           </p>
         </div>
       </div>
