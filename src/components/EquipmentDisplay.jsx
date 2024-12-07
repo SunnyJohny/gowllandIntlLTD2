@@ -5,17 +5,15 @@ import equipmentData from "../data/equipmentData"; // Import your equipment data
 const Equipment = () => {
   const [query, setQuery] = useState("");
   const [filteredEquipment, setFilteredEquipment] = useState(equipmentData);
-  const [visibleCount, setVisibleCount] = useState(6); // Number of items to show initially
-  const [selectedEquipment, setSelectedEquipment] = useState(null); // To store the clicked equipment
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [selectedEquipment, setSelectedEquipment] = useState(null);
 
-  // Handle search query
   const handleSearch = (e) => {
     const value = e.target.value;
     setQuery(value);
 
-    // Filter equipment data based on the search query
     if (value.trim() === "") {
-      setFilteredEquipment(equipmentData); // Reset to full data when search is empty
+      setFilteredEquipment(equipmentData);
     } else {
       const results = equipmentData.filter((equipment) =>
         equipment.name.toLowerCase().includes(value.toLowerCase())
@@ -23,22 +21,21 @@ const Equipment = () => {
       setFilteredEquipment(results);
     }
 
-    setVisibleCount(6); // Reset visible items count when performing a new search
+    setVisibleCount(6);
   };
 
-  // Handle "Load More" button
   const handleLoadMore = () => {
     setVisibleCount((prevCount) => prevCount + 6);
   };
 
-  // Open modal to view clicked equipment
   const handleImageClick = (equipment) => {
     setSelectedEquipment(equipment);
+    document.body.classList.add("overflow-hidden"); // Disable scrolling
   };
 
-  // Close the modal
   const closeModal = () => {
     setSelectedEquipment(null);
+    document.body.classList.remove("overflow-hidden"); // Re-enable scrolling
   };
 
   return (
@@ -101,35 +98,47 @@ const Equipment = () => {
       )}
 
       {/* Modal */}
-      {selectedEquipment && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-2xl w-full">
-            <div className="relative">
-              <button
-                className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center"
-                onClick={closeModal}
-              >
-                &times;
-              </button>
-              <img
-                src={selectedEquipment.image}
-                alt={selectedEquipment.name}
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="p-4">
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                {selectedEquipment.name}
-              </h2>
-              <p className="text-gray-600">
-                Detailed information about the selected equipment can go here.
-              </p>
-            </div>
-          </div>
+      {/* Modal */}
+{/* Modal */}
+{selectedEquipment && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-2xl w-full relative max-h-[90vh]">
+      {/* Close Button */}
+      <button
+        className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center z-10"
+        onClick={closeModal}
+      >
+        &times;
+      </button>
+
+      {/* Scrollable Content */}
+      <div className="overflow-auto max-h-[85vh]">
+        {/* Image */}
+        <img
+          src={selectedEquipment.image}
+          alt={selectedEquipment.name}
+          className="w-full cursor-pointer"
+          onClick={closeModal} // Close the modal on image click
+        />
+
+        {/* Equipment Details */}
+        <div className="p-4">
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            {selectedEquipment.name}
+          </h2>
+          <p className="text-gray-600">
+            Detailed information about the selected equipment can go here.
+          </p>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
+
+
     </div>
   );
 };
 
 export default Equipment;
+
