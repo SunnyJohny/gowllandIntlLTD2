@@ -11,7 +11,7 @@ const equipmentData = [
   { id: 8, name: "Hematology Analyzer Price", image: "/images/IMG-20241206-WA0021.jpg" },
   { id: 9, name: "IMG-20241206-WA0022", image: "/images/IMG-20241206-WA0022.jpg" },
   { id: 10, name: "Centrifuge", image: "/images/IMG-20241206-WA0023.jpg" },
-  { id: 11, name: "Suction Apparatus Apparatus", image: "/images/IMG-20241206-WA0024.jpg" },
+  { id: 11, name: "Oxygen Concentrator", image: "/images/IMG-20241206-WA0024.jpg" },
   { id: 12, name: "Doctor stool", image: "/images/IMG-20241206-WA0025.jpg" },
   { id: 13, name: "Lympha-mat 300", image: "/images/IMG-20241206-WA0026.jpg" },
   { id: 14, name: "Medical-Trolley", image: "/images/IMG-20241206-WA0027.jpg" },

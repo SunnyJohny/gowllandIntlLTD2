@@ -8,6 +8,14 @@ const Equipment = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [selectedEquipment, setSelectedEquipment] = useState(null);
 
+  // Utility function to capitalize initials of each word
+  const capitalizeWords = (text) => {
+    return text
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
+  };
+
   const handleSearch = (e) => {
     const value = e.target.value;
     setQuery(value);
@@ -30,12 +38,12 @@ const Equipment = () => {
 
   const handleImageClick = (equipment) => {
     setSelectedEquipment(equipment);
-    document.body.classList.add("overflow-hidden"); // Disable scrolling
+    document.body.classList.add("overflow-hidden");
   };
 
   const closeModal = () => {
     setSelectedEquipment(null);
-    document.body.classList.remove("overflow-hidden"); // Re-enable scrolling
+    document.body.classList.remove("overflow-hidden");
   };
 
   return (
@@ -78,7 +86,7 @@ const Equipment = () => {
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <h3 className="text-xl font-semibold text-gray-700 truncate">
-                {equipment.name}
+                {capitalizeWords(equipment.name)}
               </h3>
             </div>
           ))
@@ -98,47 +106,42 @@ const Equipment = () => {
       )}
 
       {/* Modal */}
-      {/* Modal */}
-{/* Modal */}
-{selectedEquipment && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]">
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-2xl w-full relative max-h-[90vh]">
-      {/* Close Button */}
-      <button
-        className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center z-10"
-        onClick={closeModal}
-      >
-        &times;
-      </button>
+      {selectedEquipment && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-2xl w-full relative max-h-[90vh]">
+            {/* Close Button */}
+            <button
+              className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center z-10"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
 
-      {/* Scrollable Content */}
-      <div className="overflow-auto max-h-[85vh]">
-        {/* Image */}
-        <img
-          src={selectedEquipment.image}
-          alt={selectedEquipment.name}
-          className="w-full cursor-pointer"
-          onClick={closeModal} // Close the modal on image click
-        />
+            {/* Scrollable Content */}
+            <div className="overflow-auto max-h-[85vh]">
+              {/* Image */}
+              <img
+                src={selectedEquipment.image}
+                alt={selectedEquipment.name}
+                className="w-full cursor-pointer"
+                onClick={closeModal}
+              />
 
-        {/* Equipment Details */}
-        <div className="p-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
-            {selectedEquipment.name}
-          </h2>
-          <p className="text-gray-600">
-            {/* Detailed information about the selected equipment can go here. */}
-          </p>
+              {/* Equipment Details */}
+              <div className="p-4">
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                  {capitalizeWords(selectedEquipment.name)}
+                </h2>
+                <p className="text-gray-600">
+                  {/* Detailed information about the selected equipment can go here. */}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
-
-
+      )}
     </div>
   );
 };
 
 export default Equipment;
-
