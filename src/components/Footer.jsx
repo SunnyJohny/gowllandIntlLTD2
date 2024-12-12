@@ -89,7 +89,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 border-t border-gray-600 pt-4 text-center">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} GOWLLAND INT&apos;L LTD - RC : RC/JS/1737619. All rights reserved.
+            &copy; {new Date().getFullYear()} Gowlland Ideal Concept Ltd, a subsidiary of Gowlland Int&apos;L Company - RC : RC/JS/1737619. All rights reserved.
           </p>
         </div>
       </div>

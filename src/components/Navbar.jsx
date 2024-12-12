@@ -63,12 +63,13 @@ const Navbar = () => {
         <div className="flex z-10000002 justify-between items-center text-base relative">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img
-              src="/images/gowllandfigmalogo (1).png"
-              alt="Logo"
-              className="h-8 md:h-10"
-            />
-          </a>
+  <img
+    src="/images/Group 2.png"
+    alt="Logo"
+    className="h-10 md:h-12 lg:h-14 w-auto"
+  />
+</a>
+
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-8">
@@ -109,7 +110,7 @@ const Navbar = () => {
             {/* Logo */}
             <a href="/" className="flex items-center">
               <img
-                src="/images/gowllandfigmalogo (1).png"
+                src="/images/Group 2.png"
                 alt="Logo"
                 className="h-8"
               />

@@ -7,7 +7,7 @@ const equipmentData = [
   { id: 4, name: "Thermostat Oven", image: "/images/Thermostat Oven.jpg" },
   { id: 5, name: "Binocular Microscope", image: "/images/microscope2.jpg" },
   { id: 6, name: "Patient Monitor", image: "/images/IMG-20241206-WA0019.jpg" },
-  { id: 7, name: "IMG-20241206-WA0020", image: "/images/IMG-20241206-WA0020.jpg" },
+  { id: 7, name: "Suction Machine(Single Bottle)", image: "/images/IMG-20241206-WA0020.jpg" },
   { id: 8, name: "Hematology Analyzer Price", image: "/images/IMG-20241206-WA0021.jpg" },
   { id: 9, name: "IMG-20241206-WA0022", image: "/images/IMG-20241206-WA0022.jpg" },
   { id: 10, name: "Centrifuge", image: "/images/IMG-20241206-WA0023.jpg" },
