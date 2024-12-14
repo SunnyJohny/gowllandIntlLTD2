@@ -64,7 +64,7 @@ const Navbar = () => {
           {/* Logo */}
           <a href="/" className="flex items-center">
   <img
-    src="/images/Group 2.png"
+    src="/images/Group 4 (2).png"
     alt="Logo"
     className="h-10 md:h-12 lg:h-14 w-auto"
   />
@@ -110,7 +110,7 @@ const Navbar = () => {
             {/* Logo */}
             <a href="/" className="flex items-center">
               <img
-                src="/images/Group 2.png"
+                src="/images/Group 4 (2).png"
                 alt="Logo"
                 className="h-8"
               />

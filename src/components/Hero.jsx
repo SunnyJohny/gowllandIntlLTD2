@@ -57,18 +57,30 @@ const Hero = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 hover:shadow-lg transition-all duration-300">
-            Contact Us
-          </button>
+            <button
+  className="px-6 py-2 border-2 border-green-400 text-green-400 bg-transparent rounded-full hover:bg-green-400 hover:text-white hover:scale-105 transition-transform duration-300 shadow-md"
+ 
+>
+  Contact Us
+</button>
         </a>
       </div>
     </div>
   )}
 
   {index !== 0 && (
-    <button className="px-6 py-2 bg-blue-500  text-white rounded-lg hover:bg-orange-600 hover:scale-105 transition-transform duration-300 shadow-md animate-slide-up">
-      Buy Now
-    </button>
+    <button
+  className="px-6 py-2 border-2 border-green-400 text-green-400 bg-transparent rounded-full hover:bg-green-400 hover:text-white hover:scale-105 transition-transform duration-300 shadow-md"
+  onClick={() =>
+    window.open(
+      "https://wa.me/<+2348034100655>?text=Hello!%20I%20am%20interested%20in%20your%20product.",
+      "_blank"
+    )
+  }
+>
+  Buy Now
+</button>
+
   )}
 </div>
 

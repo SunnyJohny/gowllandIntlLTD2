@@ -93,12 +93,15 @@ const Equipment = () => {
         )}
       </div>
 
+
+
       {/* Load More Button */}
       {visibleCount < filteredEquipment.length && (
         <div className="flex justify-center mt-6">
           <button
             onClick={handleLoadMore}
-            className="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 border-2 border-green-400 text-green-400 bg-transparent rounded-full hover:bg-green-400 hover:text-white hover:scale-105 transition-transform duration-300 shadow-md"
+
           >
             Load More
           </button>
